@@ -32,11 +32,11 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V3          = 11;
 
 // MONEY_SUPPLY - total number coins to be generated
 const uint64_t MONEY_SUPPLY                                  = UINT64_C(2100000008888888888);
-const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                   = 187000;
+const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                   = 5000000;
 const size_t   ZAWY_DIFFICULTY_V2                            = 0;
 const uint8_t  ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION      = 3;
 
-const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX                 = 620000;
+const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX                 = 6000000;
 const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V2              = 700000;
 const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V3              = 800000;
 
@@ -46,26 +46,6 @@ static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED
 /* Premine amount */
 const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(888888899999999999);
 
-/* How to generate a premine:
-
-* Compile your code
-
-* Run zedwallet, ignore that it can't connect to the daemon, and generate an
-  address. Save this and the keys somewhere safe.
-
-* Launch the daemon with these arguments:
---print-genesis-tx --genesis-block-reward-address <premine wallet address>
-
-For example:
-TurtleCoind --print-genesis-tx --genesis-block-reward-address TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW
-
-* Take the hash printed, and replace it with the hash below in GENESIS_COINBASE_TX_HEX
-
-* Recompile, setup your seed nodes, and start mining
-
-* You should see your premine appear in the previously generated wallet.
-
-*/
 const char     GENESIS_COINBASE_TX_HEX[]                     = "012801ff0001ffcfa6caebf7fdaa0c029835ca644baacd76cef2d55d87fa9f00bc11b93fb6e18c36960ed812107afba121014ec975b322cdada6984e2e9c1a0073e20467e2c7f48921f453a11f817dffdd8d";
 static_assert(sizeof(GENESIS_COINBASE_TX_HEX)/sizeof(*GENESIS_COINBASE_TX_HEX) != 1, "GENESIS_COINBASE_TX_HEX must not be empty.");
 
@@ -273,8 +253,8 @@ const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 };
 
 const char* const SEED_NODES[] = {
-  "72.179.57.13:11888",//seed node #1
-  "173.212.206.38:11888",//seed node #2
-  "213.136.89.252:11888"//seed node #3
+  "104.251.210.142:11888",//seed node #1 virtual machine (hostname:box1)
+  "173.212.206.38:11888",//seed node #2 cryptonote.club pool daemon node
+  "213.136.89.252:11888"//seed node #3 js's seed node
 };
 } // CryptoNote
