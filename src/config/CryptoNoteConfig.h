@@ -253,8 +253,8 @@ const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 };
 
 const char* const SEED_NODES[] = {
-  "104.251.210.142:11888",//seed node #1 virtual machine (hostname:box1)
-  "173.212.206.38:11888",//seed node #2 cryptonote.club pool daemon node
-  "213.136.89.252:11888"//seed node #3 js's seed node
+  "104.251.210.140:11888",//seed node #1 (box1)
+  "104.251.210.135:11888",//seed node #2 (box2)
+  "104.237.10.228:11888"//seed node #3 (box3)
 };
 } // CryptoNote
